@@ -1,0 +1,1 @@
+alert("Testando a ligação do script...");
