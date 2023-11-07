@@ -2,6 +2,20 @@ body{
     background-color: blueviolet;
 }
 
-.score-title{
+.container{
+    display: flex;
+}
+
+.menu{
+    align-items: center;
+    background-color: #000;
+    color: #eee;
+    display: flex;
+    height: 90px;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.titles-menu{
     color: red;
 }

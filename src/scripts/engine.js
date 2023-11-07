@@ -1,1 +1,1 @@
-alert("Testando a ligação do script...");
+// alert("Testando a ligação do script...");
