@@ -24,7 +24,7 @@ function countdown () {
     if (state.values.currentTime <=0) {
         clearInterval(state.actions.countdownTimerId);
         clearInterval(state.actions.timerId);
-        alert("Game Over! Você marcou " + state.values.result + " Pontos");
+        alert("Game Over! Você marcou " + state.values.result * 10 + " Pontos");
     }
 }
 
