@@ -12,7 +12,7 @@ const state = {
         currentTime: 60,
     },
     actions: {
-        timerId: setInterval(randomSquare, 1000),
+        timerId: setInterval(randomSquare, 750),
         countdownTimerId: setInterval(countdown, 1000),
     }
 };
@@ -25,6 +25,10 @@ function countdown () {
         clearInterval(state.actions.countdownTimerId);
         clearInterval(state.actions.timerId);
         alert("Game Over! Você marcou " + state.values.result * 10 + " Pontos");
+        state.view.squares.forEach((square) => {
+            square.classList.remove("enemy");
+        });
+        state.values.hitPosition = null;
     }
 }
 
@@ -51,14 +55,13 @@ function addListenerHitBox () {
                 state.values.result++;
                 state.view.score.textContent = state.values.result * 10;
                 state.values.hitPosition = null;
-                playsound("hit");
+                playsound("punch");
             }
         });
     });
 }
 
 function init () {
-    console.log(state.view.squares);
     addListenerHitBox();
 }
 
