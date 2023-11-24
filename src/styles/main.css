@@ -1,3 +1,24 @@
+@font-face{
+    font-family:vt323;
+    font-style:normal;
+    font-weight:400;
+    src:local('VT323'),
+        url(https://fonts.cdnfonts.com/s/15755/VT323-Regular.woff) format('woff'),
+        url(../fonts/VT323-Regular.ttf) format('ttf')
+}
+
+@keyframes animate {
+    0% {
+        opacity: 0;
+    }
+    40% {
+        opacity: 0.8;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
 body{
     background-color: blueviolet;
 }
@@ -59,4 +80,70 @@ body{
 
 .titles-menu{
     color: red;
+}
+
+.main_menu {
+    width: 80%;
+    height: 80vh;
+    border: 0.6em solid rgb(30,30,30);
+    border-radius: 0.8rem;
+    background-color: rgba(15,15,15, 0.98);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: auto;
+}
+
+.game_title {
+    max-width: 80%;
+    max-height: 60%;
+    flex-wrap: wrap;
+}
+
+.game_title h1 {
+    font-family: 'VT323', sans-serif;
+    font-size: 800%;
+    color: rgb(200, 200, 200);
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.game_title p {
+    text-align: center;
+    color: rgb(200, 200, 200);
+    animation: animate 2s linear infinite;
+}
+
+.buttons_bar {
+    display: flex;
+    flex-direction: row;
+    min-width: 70%;
+    max-width: 80%;
+    align-items: center;
+    justify-content: space-around;
+    /* border: 1px solid slateblue; */
+}
+
+.buttons_bar button {
+    border: none;
+    background-color: rgb(255, 217, 0);
+    padding: 0.8em;
+    border-radius: 0.4em;
+    transition-duration: 0.8s;
+    cursor: pointer;
+}
+
+.buttons_bar button:hover {
+    background-color: rgb(241, 230, 167);
+}
+
+.disabled {
+    opacity: 0.5;
+}
+
+.buttons_bar .disabled button:hover  {
+    opacity: 0.5;
+    cursor: not-allowed;
 }
